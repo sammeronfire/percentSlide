@@ -17,8 +17,34 @@
             <div class="container-feature"></div>
         </div>
         <div class="main-range">
-            <input type="range" min="0" max="100" step="1" id="main-range">
+            <input type="range" min="0" max="100" step="1" id="main-range-data">
         </div>
     </div>
+
+
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
+
+    
+    <script>
+        $(document).ready( function() {
+            
+            const start = 25;
+
+            $('#main-range-data').val(start);
+            $('.main-title i').text(start);
+            $('.container-feature').css('width', start+'%');
+
+            $('#main-range-data').change(function() {
+                let fooBar = $(this).val();
+                $('.main-title i').text(fooBar);
+                $('.container-feature').css('width', fooBar+'%');
+            })
+        });
+    </script>
+
+
 </body>
 </html>
